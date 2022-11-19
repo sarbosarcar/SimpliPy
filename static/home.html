@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="intro">
+        <div class="desc">
+            <p>
+                get magical recommendations at your fingertips with this amazing tool &middot; learn about interesting books and listen to enlivening songs ✨ get magical recommendations at your fingertips with this amazing tool &middot; learn about interesting books and listen to enlivening songs ✨ get magical recommendations at your fingertips with this amazing tool &middot; learn about interesting books and listen to enlivening songs ✨
+            </p>
+        </div>
+        <div class="grad"></div>
+        <div class="grad2"></div>
+        <div class="text">
+            <a href="/login" target="_blank" class="txt">
+            dive into <span class="magic">magic</span>
+            <span class="arr">&#129133;</span>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        $('.txt').hover(()=>{
+            $('.arr').css('transform', 'rotateZ(45deg)');
+        }, ()=>{
+            $('.arr').css('transform', 'rotateZ(0deg)')
+        });
+    </script>
+</body>
+</html>

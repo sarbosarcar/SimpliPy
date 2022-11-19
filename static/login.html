@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="intro">
+        <div class="img">
+        
+        </div>
+        <div class="grad"></div>
+        <div class="grad2"></div>
+        <div class="form">
+            <form action="/" method="post">
+                <div id="title" class="title">
+                    login
+                </div>
+                <input type="text" name="uname" id="uname" placeholder="username">
+                <br>
+                <input type="password" name="pass" id="pass" placeholder="password">
+                <br>
+                <button id="btn" type="submit" onmouseover="onHover()" onmouseout="onMouseOut()">
+                    &#129130;
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function onHover() {
+            document.getElementById('title').style.backgroundSize = "0 0.1em, 100% 0.1em";
+        };
+        function onMouseOut() {
+            document.getElementById('title').style.backgroundSize = "100% 0.1em, 0 0.1em";
+        }
+    </script>
+</body>
+</html>
