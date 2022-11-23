@@ -5,11 +5,11 @@
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="preload" href="https://i.imgur.com/e29crnp.png" as="image" />
+    <title>Sign Up</title>
+    <link rel="preload" href="https://i.imgur.com/NcY2rp9.png" as="image" />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='login.css') }}"
+      href="{{ url_for('static', filename='signup.css') }}"
     />
   </head>
   <body>
@@ -30,30 +30,40 @@
                 {% endif %}
             {% endwith %}
         {% endblock %}
-        <form action="/login" method="post">
-          <div id="title" class="title">login</div>
+        <form action="/signup" method="post">
+          <div id="title" class="title">sign up</div>
           <input
             type="text"
             name="uname"
             id="uname"
             placeholder="username"
-            required
-            autocapitalize="off"
             autocomplete="off"
+            autocapitalize="off"
+            required
           />
           <br />
           <input
             type="password"
-            name="pass"
+            name="passNew"
             id="pass"
-            placeholder="password"
-            required
-            autocapitalize="off"
+            placeholder="new password"
             autocomplete="off"
+            autocapitalize="off"
+            required
+          />
+          <br />
+          <input
+            type="password"
+            name="passCon"
+            id="pass"
+            placeholder="confirm password"
+            autocomplete="off"
+            autocapitalize="off"
+            required
           />
           <br />
           <div class="new-user">
-            <a href="/signup" class="signup">New User ?</a>
+            <a href="/login" class="login">Already a user ? Log in instead</a>
           </div>
           <br />
           <button

@@ -6,6 +6,8 @@
     box-sizing: border-box;
     margin: 0;
     font-family: "League Spartan", sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .intro {
@@ -17,7 +19,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: url("https://i.imgur.com/e29crnp.png");
+    background: url("https://i.imgur.com/NcY2rp9.png");
     width: 50vw;
     height: 100vh;
 }
@@ -53,7 +55,7 @@
 }
 
 .form {
-    top: 0;
+    top: 7vh;
     left: 50vw;
     position: absolute;
     width: 50vw;
@@ -61,12 +63,12 @@
 }
 
 form {
-    margin-top: 15vh;
+    margin-top: 0;
     margin-left: 5vw;
 }
 
 .title {
-    width: 4.6ch;
+    width: 5.5ch;
     font-size: 9em;
     background: linear-gradient(to right, transparent, transparent),
         linear-gradient(
@@ -128,14 +130,14 @@ button[type="submit"]:hover {
     margin-top: 2vh;
 }
 
-.signup {
+.login {
     text-decoration: underline;
     color: #000;
     font-weight: 700;
 }
 
-.signup:hover,
-.signup:focus {
+.login:hover,
+.login:focus {
     text-decoration: none;
 }
 
@@ -144,13 +146,17 @@ button[type="submit"]:hover {
     background-color: #f8d7da;
     border-color: #f5c6cb;
     font-size: 1.5rem;
-    margin-top: 1vh;
+    margin-top: 0;
     padding: 0.5em 1em;
     text-align: center;
     margin: auto;
 }
 
-@media only screen and (max-width: 748px) {
+@media only screen and (max-width: 968px) {
+    * {
+        overflow-x: hidden;
+        overflow-y: initial;
+    }
     .intro {
         display: block;
     }
