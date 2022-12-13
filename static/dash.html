@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Welcome</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='dash.css') }}"
+        />
+    </head>
+    <body>
+        <div class="intro">
+            <div class="navbar">
+                <div class="home">
+                    <ul>
+                        <li class="home-nav">simplipy</li>
+                    </ul>
+                </div>
+                <div class="navgroup">
+                    <ul>
+                        <li class="abt ng"><a href="">about&#129133;</a></li>
+                        <li class="logout ng">
+                            <a href="/logout">logout&#129133;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grad"></div>
+            <div class="grad2"></div>
+        </div>
+        {% block content %}
+        <div class="content">
+            <div class="main-container">
+                <div class="songs cont">
+                    {% if recommended %}
+                    <p class="title song"><a href="{{ link }}" target="blank">{{ recommended[1] }} &#129133;</a></p>
+                    <br />
+                    <br />
+                    <p class="artist song" style="font-size: 1.75em;">{{ recommended[2] }}</p>
+                    <br />
+                    <br />
+                    <p class="year song">{{ recommended[4] }}</p>
+                    <br />
+                    <br />
+                    {% else %} 
+                    {% if session %}
+                    <h1>Welcome {{ session['user'] }} 🎵</h1>
+                    {% endif %}
+                    <div class="ptag">
+                        <p class="des">
+                            Listen to your vibrant muse! <br />
+                            Songs that inspire, <br />
+                            Memories that stay.
+
+                            <br />
+                            Use the form alongside to provide input regarding
+                            your choice of music and get magical recommendations
+                            at your fingertips
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="songs-form cont">
+                    <h1>Choose your star track ✨</h1>
+                    <form action="/users/recommend" method="post">
+                        <div class="ptag">
+                            <p class="none">You would probably...</p>
+                            <br />
+                            <select
+                                id="inputGen"
+                                class="form-control"
+                                name="inputGen"
+                                required
+                            >
+                                <option value="" selected disabled>
+                                    Choose an option
+                                </option>
+                                <option value="classic">
+                                    Cherish a classic
+                                </option>
+                                <option value="jazz">
+                                    Vibe with jazz
+                                </option>
+                                <option value="pop">
+                                    Listen to pop
+                                </option>
+                                <option value="punk">
+                                    Try out punk
+                                </option>
+                            </select>
+                        </div>
+                        <br /><br />
+                        <div class="ptag">
+                            <p class="none">You generally like...</p>
+                            <br />
+                            <select
+                                id="inputYr"
+                                class="form-control"
+                                name="inputYr"
+                                required
+                            >
+                                <option value="" selected disabled>
+                                    Choose an option
+                                </option>
+                                <option value="new">
+                                    New songs from recent years
+                                </option>
+                                <option value="old">
+                                    Relatively old tracks
+                                </option>
+                            </select>
+                        </div>
+
+                        <br /><br />
+                        <button id="btn" type="submit" class="rec">
+                            &#129130;
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>
