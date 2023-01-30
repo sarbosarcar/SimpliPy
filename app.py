@@ -50,10 +50,10 @@ def signup_post():
         flash("Passwords should be alphanumeric!")
         return redirect('/signup')
     try:
-        with mc.connect(user="root", host="localhost", passwd=passwd) as obj:
+        with mc.connect(user="sql12594451", host="sql12.freesqldatabase.com", passwd=passwd) as obj:
             cursor = obj.cursor()
-            cursor.execute("CREATE DATABASE IF NOT EXISTS Recommender")
-            cursor.execute("USE Recommender")
+            cursor.execute("CREATE DATABASE IF NOT EXISTS sql12594451")
+            cursor.execute("USE sql12594451")
             cursor.execute(
                 "CREATE TABLE IF NOT EXISTS Data (UNo INT NOT NULL AUTO_INCREMENT PRIMARY KEY, UName VARCHAR(20) UNIQUE, UPass BINARY(128))")
             cursor.execute(f"SELECT * FROM Data WHERE UName='{uname}'")
@@ -79,7 +79,7 @@ def login_post():
     uname = request.form.get("uname")
     upass = request.form.get("pass")
     try:
-        with mc.connect(user="root", host="localhost", passwd=passwd, database="Recommender") as obj:
+        with mc.connect(user="sql12594451", host="sql12.freesqldatabase.com", passwd=passwd, database="sql12594451") as obj:
             cursor = obj.cursor()
             cursor.execute(f"SELECT IF(AES_ENCRYPT('{upass}', 'key') = UPass, '1', '0') FROM Data WHERE UName = '{uname}';")
             val = cursor.fetchone()
