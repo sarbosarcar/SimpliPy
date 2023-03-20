@@ -1,6 +1,6 @@
 # SimpliPy
 
-[![](https://github.com/sarbosarcar/SimpliPy/blob/main/static/icon1.png)](https://simplipy.onrender.com/)
+[![](https://github.com/sarbosarcar/SimpliPy/blob/main/static/SimpliPy.png)](https://simplipy.onrender.com/)
 
 ## Overview
 - A Flask-based web application aimed at recommending songs. 
