@@ -81,7 +81,7 @@ def login_post():
     try:
         with mc.connect(user="mydb_framebook", host="6ot.h.filess.io", passwd=passwd, database="mydb_framebook") as obj:
             cursor = obj.cursor()
-            cursor.execute(f"SELECT IF(AES_ENCRYPT('{upass}', 'key') = UPass, '1', '0') FROM Data WHERE UName = '{uname}';")
+            cursor.execute(f"SELECT IF(CAST(AES_ENCRYPT('{upass}', 'key') AS BINARY(128)) = UPass, '1', '0') FROM Data WHERE UName = '{uname}';")
             val = cursor.fetchone()
             if val is not None:
                 if val[0] == '1':
